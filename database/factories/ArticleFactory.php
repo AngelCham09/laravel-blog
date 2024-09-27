@@ -19,7 +19,7 @@ class ArticleFactory extends Factory
     {
         return [
             "title" => fake()->jobTitle(),
-            "content" => fake()->word(),
+            "content" => fake()->text(),
             "image" => fake()->url(),
             "category_id" => Category::factory(),
         ];

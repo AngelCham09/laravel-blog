@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -12,7 +13,15 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::latest()->with([
+            'category',
+            'tags'
+        ])->get();
+
+        return view('article.index', [
+            'articles' => $articles,
+            'tags' => Tag::all()
+        ]);
     }
 
     /**
@@ -36,7 +45,11 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $article->load('category', 'tags');
+        
+        return view('article.show', [
+            'article' => $article,
+        ]);
     }
 
     /**
