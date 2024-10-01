@@ -10,6 +10,10 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $table = 'tags';
+
+    protected $fillable = ['name'];
+
     public function article(): BelongsToMany
     {
         return $this->belongsToMany(Article::class);

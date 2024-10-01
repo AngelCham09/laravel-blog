@@ -14,8 +14,7 @@
                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">{{ $tag->name }}</a>
                 @endforeach
             </header>
-            <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
-                    alt="..."></figure>
+            <figure class="mb-4"><img src="{{ asset('storage/' . $article->image) }}" alt="Image" width="550"></figure>
             <section class="mb-5">{{ $article->content }}</section>
         </article>
     </div>

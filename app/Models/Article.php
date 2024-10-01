@@ -12,6 +12,8 @@ class Article extends Model
 
     protected $table = 'article';
 
+    protected $fillable = ['title','content','image','category_id', 'tag'];
+
     public function tag(string $name)
     {
         $tag = Tag::firstOrCreate(['name' => $name]);

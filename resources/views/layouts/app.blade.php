@@ -22,7 +22,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -68,13 +68,13 @@
                                     </form>
 
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('tags.index') }}">
                                         Tags
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('category.index') }}">
                                         Category
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
+                                    <a class="dropdown-item" href="{{ route('post.index') }}">
                                         Post
                                     </a>
                                 </div>

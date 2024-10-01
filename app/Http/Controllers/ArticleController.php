@@ -46,7 +46,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->load('category', 'tags');
-        
+
         return view('article.show', [
             'article' => $article,
         ]);
